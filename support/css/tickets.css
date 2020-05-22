@@ -1,0 +1,118 @@
+.contentticket{
+  margin-top: 8px;
+  width: 100%;
+}
+.sidebarticket{
+  width: 28%;
+  float: right;
+}
+.blockticket{
+  width: 70%;
+  float: left;
+}
+.buttontickets{
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.buttontickets button{
+  margin-bottom: 4px;
+}
+.headticket{
+  background: #fafafa;
+  padding: 5px;
+  margin-top: 8px;
+  font-style: oblique;
+  border-bottom: 0px;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  text-align: center;
+  font-size: 15px;
+}
+.bodyticketstweet{
+  background: #fff;
+  border: 1px solid #ccc;
+
+}
+.bodyticketstweet2{
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 2px;
+
+}
+.tickettweet{
+  border-top: 2px solid #ccc;
+}
+.tickettweet img{
+  border-radius: 50%;
+}
+.mytickets{
+  border: 1px solid #ccc;
+  background: #fff;
+  margin-top: 5px;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding-bottom: 3px;
+}
+.headtick2{
+  margin-bottom: 1px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-style: oblique;
+  background: #fafafa;
+  border-bottom: #bbb 1px solid ;
+}
+.viewheaderti{
+  background: #ccc;
+  margin-bottom: 18px;
+  padding: 6px;
+  box-sizing: border-box;
+  border: 1px solid #d0d1d5;
+}
+.costumerser{
+  background: #f8f8f8;
+  padding: 7px;
+  font-size: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+.repleyticket{
+  background: #fff;
+  padding: 15px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  margin-bottom: 3px;
+}
+.costumerseradmin{
+  background: #337AB7;
+  color: #fff;
+  padding: 7px;
+  font-size: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+.repleyticketadmin{
+  background: #fff;
+  padding: 15px;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  margin-bottom: 3px;
+}

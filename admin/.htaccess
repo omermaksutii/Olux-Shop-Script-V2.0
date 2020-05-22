@@ -1,0 +1,18 @@
+  Options +FollowSymLinks
+  RewriteEngine on
+  RewriteRule ^index\.html$ index.php [T=application/x-httpd-php,L]
+  RewriteRule ^Status\.html$ dollar.php [T=application/x-httpd-php,L]
+  RewriteRule ^Tools\.html$ toolsvis.php [T=application/x-httpd-php,L]
+  RewriteRule ^NewsBuyer\.html$ news.php [T=application/x-httpd-php,L]
+  RewriteRule ^NewsSeller\.html$ newseller.php [T=application/x-httpd-php,L]
+  RewriteRule ^Tickets\.html$ ticket.php [T=application/x-httpd-php,L]
+  RewriteRule ^Reports\.html$ reports.php [T=application/x-httpd-php,L]
+  RewriteRule ^Users\.html$ users.php [T=application/x-httpd-php,L]
+  RewriteRule ^WithdrawalRequests\.html$ withdrawalreq.php [T=application/x-httpd-php,L]
+  RewriteRule ^Sellers\.html$ resseller.php [T=application/x-httpd-php,L]
+  RewriteRule ^PaySeller\.html$ rpay.php [T=application/x-httpd-php,L]
+  RewriteRule ^Logout\.html$ lougout.php [T=application/x-httpd-php,L]
+  RewriteRule ^UsersBalance\.html$ usersb.php [T=application/x-httpd-php,L]
+  RewriteRule ^SearchUser\.html$ userss.php [T=application/x-httpd-php,L]
+  RewriteRule ^login\.html$ login.php [T=application/x-httpd-php,L]
+  RewriteRule ^Sales\.html$ sales.php [T=application/x-httpd-php,L]

@@ -1,0 +1,35 @@
+.btnn {
+    padding: 2px;
+    color: #fff;
+    border: 0px;
+    margin: 4px;
+    border: 1px solid #000;
+    color: #000;
+}
+.bred{
+    background: #F44336;
+}
+.bindigo{
+    background: #3F51B5;
+}
+.bpurple{
+    background: #673AB7;
+}
+.bblue{
+    background: #2196F3;
+}
+.blb{
+    background: #03A9F4;
+}
+.bteal{
+    background: #009688;
+}
+.bgreen{
+    background: #4CAF50;
+}
+.bb2{
+    background: #2962FF;
+}
+.bgrey{
+    background: #607D8B;
+}

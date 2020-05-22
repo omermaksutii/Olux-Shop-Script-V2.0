@@ -1,0 +1,169 @@
+ErrorDocument 404 /index.html
+RewriteEngine on
+Options -Indexes
+RewriteRule ^index.html$  index.php
+RewriteRule ^ajaxinfo.html$  ajax.php
+RewriteRule ^shell.html$  shells.php
+RewriteRule ^shellMass.html$  shellMass.php
+RewriteRule ^shellAdd.html$  shellAdd.php
+RewriteRule ^shellTab1.html$  shellTab1.php
+RewriteRule ^shellTab2.html$  shellTab2.php
+RewriteRule ^shellTab3.html$  shellTab3.php
+RewriteRule ^rdp.html$  rdps.php
+RewriteRule ^rdpAdd.html$  rdpAdd.php
+RewriteRule ^rdpTab1.html$  rdpTab1.php
+RewriteRule ^rdpTab2.html$  rdpTab2.php
+RewriteRule ^sales.html$  sales.php
+RewriteRule ^withdraw.html$  withdrawal.php
+RewriteRule ^reports.html$  reports.php
+RewriteRule ^reportsTab1.html$  reportsTab1.php
+RewriteRule ^reportsTab2.html$  reportsTab2.php
+RewriteRule ^premium.html$  premium.php
+RewriteRule ^premiumAdd.html$  premiumAdd.php
+RewriteRule ^premiumTab1.html$  premiumTab1.php
+RewriteRule ^premiumTab2.html$  premiumTab2.php
+RewriteRule ^banks.html$  banks.php
+RewriteRule ^banksAdd.html$  banksAdd.php
+RewriteRule ^banksTab1.html$  banksTab1.php
+RewriteRule ^banksTab2.html$  banksTab2.php
+RewriteRule ^smtp.html$  smtps.php
+RewriteRule ^smtpAdd.html$  smtpAdd.php
+RewriteRule ^smtpTab1.html$  smtpTab1.php
+RewriteRule ^smtpTab2.html$  smtpTab2.php
+RewriteRule ^tutorial.html$  tutorials.php
+RewriteRule ^tutorialAdd.html$  tutorialAdd.php
+RewriteRule ^tutorialTab1.html$  tutorialTab1.php
+RewriteRule ^tutorialTab2.html$  tutorialTab2.php
+RewriteRule ^mailer.html$  mailers.php
+RewriteRule ^mailerAdd.html$  mailerAdd.php
+RewriteRule ^mailerTab1.html$  mailerTab1.php
+RewriteRule ^mailerTab2.html$  mailerTab2.php
+RewriteRule ^cpanel.html$  cpanels.php
+RewriteRule ^cpanelAdd.html$  cpanelAdd.php
+RewriteRule ^cpanelMass.html$  cpanelMass.php
+RewriteRule ^cpanelTab1.html$  cpanelTab1.php
+RewriteRule ^cpanelTab2.html$  cpanelTab2.php
+RewriteRule ^cpanelTab3.html$  cpanelTab3.php
+RewriteRule ^leads.html$  leads.php
+RewriteRule ^leadAdd.html$  leadAdd.php
+RewriteRule ^leadTab1.html$  leadTab1.php
+RewriteRule ^leadTab2.html$  leadTab2.php
+RewriteRule ^scampage.html$  scams.php
+RewriteRule ^scampageAdd.html$  scampageAdd.php
+RewriteRule ^scampageTab1.html$  scampageTab1.php
+RewriteRule ^scampageTab2.html$  scampageTab2.php
+RewriteRule ^vt-(.*).html$ vt.php?id=$1
+RewriteRule ^vr-(.*).html$ vr.php?id=$1
+RewriteRule ^refund-(.*)$ refund.php?id=$1
+RewriteRule ^showOrder(.*)$ openorder.php?id=$1
+
+
+Order Deny,Allow
+Deny from 41.87.128.0-41.87.159.255
+Deny from 41.92.0.0-41.92.127.255
+Deny from 41.137.0.0-41.137.255.255
+Deny from 41.140.0.0-41.143.255.255
+Deny from 41.205.192.0-41.205.223.255
+Deny from 41.214.128.0-41.214.255.255
+Deny from 41.248.0.0-41.251.255.255
+Deny from 45.216.0.0-45.219.255.255
+Deny from 62.251.128.0-62.251.255.255
+Deny from 81.192.0.0-81.192.255.255
+Deny from 105.64.0.0-105.79.255.255
+Deny from 105.128.0.0-105.159.255.255
+Deny from 105.188.0.0-105.191.255.255
+Deny from 160.160.0.0-160.175.255.255
+Deny from 160.176.0.0-160.179.255.255
+Deny from 193.194.32.0-193.194.63.255
+Deny from 194.204.192.0-194.204.255.255
+Deny from 196.2.80.0-196.2.95.255
+Deny from 196.12.192.0-196.12.255.255
+Deny from 196.200.128.0-196.200.191.255
+Deny from 196.206.0.0-196.206.255.255
+Deny from 196.217.0.0-196.217.255.255
+Deny from 197.128.0.0-197.131.255.255
+Deny from 197.144.0.0-197.147.255.255
+Deny from 197.153.0.0-197.153.255.255
+Deny from 197.230.0.0-197.230.255.255
+Deny from 197.247.0.0-197.247.255.255
+Deny from 197.253.128.0-197.253.255.255
+Deny from 212.217.0.0-212.217.127.255
+
+RewriteCond %{REQUEST_METHOD} ^(HEAD|TRACE|DELETE|TRACK|DEBUG) [NC]
+
+RewriteRule ^(.*)$ - [F,L]
+RewriteCond %{HTTP_USER_AGENT} (libwww-perl|wget|python|nikto|curl|scan|java|winhttp|clshttp|loader) [NC,OR]
+
+RewriteCond %{HTTP_USER_AGENT} (<|>|'|%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
+
+RewriteCond %{HTTP_USER_AGENT} (;|<|>|'|"|\)|\(|%0A|%0D|%22|%27|%28|%3C|%3E|%00).*(libwww-perl|wget|python|nikto|curl|scan|java|winhttp|HTTrack|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC,OR]
+
+RewriteCond %{THE_REQUEST} \?\ HTTP/ [NC,OR]
+
+RewriteCond %{THE_REQUEST} \/\*\ HTTP/ [NC,OR]
+
+RewriteCond %{THE_REQUEST} etc/passwd [NC,OR]
+
+RewriteCond %{THE_REQUEST} cgi-bin [NC,OR]
+
+RewriteCond %{THE_REQUEST} (%0A|%0D) [NC,OR]
+
+RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=http:// [OR]
+
+RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=(\.\.//?)+ [OR]
+
+RewriteCond %{QUERY_STRING} [a-zA-Z0-9_]=/([a-z0-9_.]//?)+ [NC,OR]
+
+RewriteCond %{QUERY_STRING} \=PHP[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12} [NC,OR]
+
+RewriteCond %{QUERY_STRING} (\.\./|\.\.) [OR]
+
+RewriteCond %{QUERY_STRING} ftp\: [NC,OR]
+
+RewriteCond %{QUERY_STRING} http\: [NC,OR]
+
+RewriteCond %{QUERY_STRING} https\: [NC,OR]
+
+RewriteCond %{QUERY_STRING} \=\|w\| [NC,OR]
+
+RewriteCond %{QUERY_STRING} ^(.*)/self/(.*)$ [NC,OR]
+
+RewriteCond %{QUERY_STRING} ^(.*)cPath=http://(.*)$ [NC,OR]
+
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+
+RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+
+RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR]
+
+RewriteCond %{QUERY_STRING} (<|%3C)([^i]*i)+frame.*(>|%3E) [NC,OR]
+
+RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [NC,OR]
+
+RewriteCond %{QUERY_STRING} base64_(en|de)code[^(]*\([^)]*\) [NC,OR]
+
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2}) [OR]
+
+RewriteCond %{QUERY_STRING} ^.*(\[|\]|\(|\)|<|>).* [NC,OR]
+
+RewriteCond %{QUERY_STRING} (NULL|OUTFILE|LOAD_FILE) [OR]
+
+RewriteCond %{QUERY_STRING} (\./|\../|\.../)+(motd|etc|bin) [NC,OR]
+
+RewriteCond %{QUERY_STRING} (localhost|loopback|127\.0\.0\.1) [NC,OR]
+
+RewriteCond %{QUERY_STRING} (<|>|'|%0A|%0D|%27|%3C|%3E|%00) [NC,OR]
+
+RewriteCond %{QUERY_STRING} concat[^\(]*\( [NC,OR]
+
+RewriteCond %{QUERY_STRING} union([^s]*s)+elect [NC,OR]
+
+RewriteCond %{QUERY_STRING} union([^a]*a)+ll([^s]*s)+elect [NC,OR]
+
+RewriteCond %{QUERY_STRING} (;|<|>|'|"|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|drop|delete|update|cast|create|char|convert|alter|declare|order|script|set|md5|benchmark|encode) [NC,OR]
+
+RewriteCond %{QUERY_STRING} (sp_executesql) [NC]
+
+RewriteRule ^(.*)$ - [F,L]
