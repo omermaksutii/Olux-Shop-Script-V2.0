@@ -9,7 +9,7 @@ if (!isset($_SESSION['sname']) and !isset($_SESSION['spass'])) {
     exit();
 }
 $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-?>
+
 
 
 
@@ -17,23 +17,6 @@ $usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
   </div>
   <!-- /.container-fluid -->
 </nav>
-
-
-
-<body>
-?php
-ob_start();
-session_start();
-
-date_default_timezone_set('UTC');
-include "../includes/config.php";
-
-if(!isset($_SESSION['sname']) and !isset($_SESSION['spass'])){
-   header("location: ../");
-   exit();
-}
-$usrid = mysqli_real_escape_string($dbcon, $_SESSION['sname']);
-?>   
 <table width="100%" id="dataTable" class="table table-striped table-bordered table-condensed sticky-header dataTable no-footer" role="grid" aria-describedby="dataTable_info" style="width: 100%;">        <thead>
   <thead>
   <tr>
