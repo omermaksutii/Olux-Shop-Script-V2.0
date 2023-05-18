@@ -39,17 +39,134 @@ $query = mysqli_query($dbcon, "SELECT DISTINCT(`resseller`) FROM `leads` WHERE `
 </div>
 
 
-<table width="100%"  class="table table-striped table-bordered table-condensed sticky-header" id="table">
+
+ 
+<table width="100%" class="table table-striped table-bordered table-condensed sticky-header" id="table">
+    <thead>
+        <tr>
+            <th scope="col">Country</th>
+            <th scope="col">Description</th>
+            <th scope="col">Email N</th>
+ 
+            <th scope="col">Seller</th>
+            <th scope="col">Price</th>
+            <th scope="col">Added on </th>
+ 
+            <th scope="col">Buy</th>
+        </tr>
+    </thead>
+    <tbody>
+ 
+ 
+        <tr>
+            <td id='leads_country'><i class='flag-icon flag-icon-om'></i> Oman </td>
+            <td id='that" '> hotmai </td>
+            <td> 1332k </td>
+            <td id='leads_seller'> seller3</td>
+            <td> 12</td>
+            <td> 10/05/2023 10:35:25 pm</td>
+            <td>
+                <span id="leads4" title="buy" type="leads"><a onclick="javascript:buythistool(4)" class="btn btn-primary btn-xs">
+                        <font color=white>Buy</font>
+                    </a></span>
+                <center>
+            </td>
+        </tr>
+ 
+        <tr>
+            <td id='leads_country'><i class='flag-icon flag-icon-mm'></i> Myanmar </td>
+            <td id='leads_about'> hotmaib </td>
+            <td> 1332k </td>
+            <td id='leads_seller'> seller3</td>
+            <td> 123</td>
+            <td> 10/05/2023 11:06:53 pm</td>
+            <td>
+                <span id="leads5" title="buy" type="leads"><a onclick="javascript:buythistool(5)" class="btn btn-primary btn-xs">
+                        <font color=white>Buy</font>
+                    </a></span>
+                <center>
+            </td>
+        </tr>
+        <script type="text/javascript">
+            $('#filterbutton').click(function() {
+                $("#table tbody tr").each(function() {
+                    var ck1 = $.trim($(this).find("#leads_country").text().toLowerCase());
+                    var ck2 = $.trim($(this).find("#leads_about").text().toLowerCase());
+                    var ck3 = $.trim($(this).find("#leads_seller").text().toLowerCase());
+                    var val1 = $.trim($('select[name="leads_country"]').val().toLowerCase());
+                    var val2 = $.trim($('input[name="leads_about"]').val().toLowerCase());
+                    var val3 = $.trim($('select[name="leads_seller"]').val().toLowerCase());
+                    if ((ck1 != val1 && val1 != '') || ck2.indexOf(val2) == -1 || (ck3 != val3 && val3 != '')) {
+                        $(this).hide();
+                    } else {
+                        $(this).show();
+                    }
+                });
+                $('#filterbutton').prop('disabled', true);
+            });
+            $('.filterselect').change(function() {
+                $('#filterbutton').prop('disabled', false);
+            });
+            $('.filterinput').keyup(function() {
+                $('#filterbutton').prop('disabled', false);
+            });
+ 
+            function buythistool(id) {
+                bootbox.confirm("Are you sure?", function(result) {
+                    if (result == true) {
+                        $.ajax({
+                            method: "GET",
+                            url: "buytool.php?id=" + id + "&t=leads",
+                            dataType: "text",
+                            success: function(data) {
+                                if (data.match(/<button/)) {
+                                    $("#leads" + id).html(data).show();
+                                } else {
+                                    bootbox.alert('<center><img src="files/img/balance.png"><h2><b>No enough balance !</b></h2><h4>Please refill your balance <a class="btn btn-primary btn-xs"  href="addBalance.html" onclick="window.open(this.href);return false;" >Add Balance <span class="glyphicon glyphicon-plus"></span></a></h4></center>')
+                                }
+                            },
+                        });;
+                    }
+                });
+            }
+ 
+            function openitem(order) {
+                $("#myModalLabel").text('Order #' + order);
+                $('#myModal').modal('show');
+                $.ajax({
+                    type: 'GET',
+                    url: 'showOrder' + order + '.html',
+                    success: function(data) {
+                        $("#modelbody").html(data).show();
+                    }
+                });
+ 
+            }
+        </script>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="myModalLabel"></h4>
+                    </div>
+                    <div class="modal-body" id="modelbody">
+ 
+ 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
 <thead>
     <tr>
       <th scope="col" >Country</th>
       <th scope="col">Description</th>
       <th scope="col">Email N</th>
-
       <th scope="col">Seller</th>
       <th scope="col">Price</th>
       <th scope="col">Added on </th>
-
       <th scope="col">Buy</th>
     </tr>
 </thead>
