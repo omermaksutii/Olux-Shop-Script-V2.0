@@ -7,13 +7,13 @@
   
 
   if(isset($_SESSION['sname']) and isset($_SESSION['spass'])){
-   header("location: index.html");
+   header("location: main");
    exit();
   }
   if (isset($_POST['user'],$_POST['pass'])) {
     # code...
   } else{
-    header('location:index.html');
+    header('location:main');
     exit();
   }
   $username = mysqli_real_escape_string($dbcon, strip_tags($_POST['user']));
@@ -28,19 +28,19 @@
      $_SESSION['sname'] = $username;
      $_SESSION['spass'] = $userpass;
 	  //$errorbox = "<div class='alert alert-dismissible alert-success'><button type='button' class='close' data-dismiss='alert'>×</button><p>Login successful. Redirecting …</p></div>";
-      //echo '{"state":"1","errorbox":"'.$errorbox.'","url":"index.html"}';
-     header('location:index.html');
+      //echo '{"state":"1","errorbox":"'.$errorbox.'","url":"main"}';
+     header('location:main');
      exit();
 	  }else{
 	  //$errorbox = "<div class='alert alert-dismissible alert-info'><button type='button' class='close' data-dismiss='alert'>×</button><p>Login failed! Please try again! 1</p></div>";
       //echo '{"state":"0","errorbox":"'.$errorbox.'","url":"0"}';
-      header('location:login.html?error=true');
+      header('location:login?error=true');
       exit();
     }
   }else{
 	  //$errorbox = "<div class='alert alert-dismissible alert-info'><button type='button' class='close' data-dismiss='alert'>×</button><p>Login failed! Please try again! 2</p></div>";
       //echo '{"state":"0","errorbox":"'.$errorbox.'","url":"0"}';
-      header('location:login.html?error=true');
+      header('location:login?error=true');
       exit();
     }
   

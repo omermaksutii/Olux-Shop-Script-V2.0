@@ -42,7 +42,7 @@ $serverurl = $row['url'];
 		$pass = srl($d[2]);
 			$o = parse_url($url, PHP_URL_HOST);
 		$cp1 = "$o";
-		$urltoapi = "http://localhost/x/olux/apicheckcp.php?cp12=$cp1&login=$login&pass=".rawurlencode($pass)."";
+		$urltoapi = "http://xbasetools.xyz/dashboard/apicheckcp.php?cp12=$cp1&login=$login&pass=".rawurlencode($pass)."";
 $urltoapi2 = curl_get_contents($urltoapi);
 	if (preg_match('#CP Work#', $urltoapi2))
 		{
